@@ -5,9 +5,11 @@ import Word from './Word.js';
 
 function App() {
 
-  const [search, setSearch] = useState("");
+  const minWordSize = 3;
+  const maxWordSize = 14;
   const [words, setWords] = useState([]);
-  const [wordSize, setWordSize] = useState(1);
+  const [wordSize, setWordSize] = useState(minWordSize);
+  const [letters, setLetters] = useState([formLetters(wordSize)]);
 
   const searchFor = async (searchValue) => {
     console.log(searchValue);
@@ -16,35 +18,84 @@ function App() {
     .then(data => setWords(data.words));  
   }
 
+  function getTextSearch(){
+    let searchText = "";
+    for(let i = 0; i < wordSize; i++){
+      let inputValue = document.getElementById(`letter${i}`).value;
+      if(inputValue === " " || inputValue === "?" || inputValue === ""){
+        searchText += "_";
+      } else{
+        searchText += inputValue;
+      }
+    }  
+    console.log(searchText);
+    return searchText;
+  }
+
+  function formLetters(count){
+    let elements = []
+    for(let i = 0; i < count; i++){
+      elements.push(
+        <input className="letter-style" id={`letter${i}`} type="text" maxLength="1" placeholder="?"/>
+      );
+    }
+
+    return(
+      elements
+    );
+  }
+
+  function addLetter(){
+    if (wordSize < 14) {
+      setWordSize(wordSize+1);
+      setLetters(formLetters(wordSize+1));
+      console.log(wordSize+1);
+    }
+  }
+
+  function removeLetter(){
+    if (wordSize > 3) {
+      setWordSize(wordSize-1);
+      setLetters(formLetters(wordSize-1));
+      console.log(wordSize-1);
+    }
+  }
+
+
   return (
     <div>
-      <header className="header-style">
+      <header className="header-style" id="header">
         <p className="header-title">Поле Чудес</p>
       </header>
       <section className="search-section">
         <div className="word-size-container">
-          <button className="arrow-container" onClick={() => { if(wordSize > 2 )  setWordSize(wordSize-1) } }><div className="left-arrow"></div></button>
+          <button className="arrow-container" onClick={() => { removeLetter() } }><div className="left-arrow"></div></button>
           <p className="word-size">{wordSize}</p>
-          <button className="arrow-container" onClick={() => { if(wordSize < 20)  setWordSize(wordSize+1) } }><div className="right-arrow"></div></button>
-        </div>
-        <div className="letter-container">
-          
-        </div>
-        <div>
-          <input type="text" placeholder="Поиск слова" value={search} onChange={e => setSearch(e.target.value)}/>
-          <button onClick={() => searchFor(search)}>Поиск</button>
+          <button className="arrow-container" onClick={() => { addLetter() } }><div className="right-arrow"></div></button>
         </div>
 
-        <div className="words-container">
-          {words.map(word => (
-            <Word word={word.word} />
-          ))};  
+        <div className="letters-container">
+          {letters}
+        </div>
+
+        <div className="search-button-container">
+          <a href="#results">
+          <button className="search-button" onClick={() => searchFor(getTextSearch())}>Поиск</button>
+          </a>
         </div>
 
       </section>
 
+      <section className="result-section" id="results">
 
+        <div className="words-container">
+          {words.map((word, index) => (
+            <Word word={word.word} id={`word${index}`} />
+          ))};  
+        </div>
 
+    
+      </section>
     </div>
   );
 }

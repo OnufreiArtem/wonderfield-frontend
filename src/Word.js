@@ -3,8 +3,8 @@ import React from 'react';
  
 function Word({word}){
     return(
-        <div>
-            <p>{word}</p>
+        <div className="word-container-style">
+            <p className="word-text-style">{word}</p>
         </div>
     );
 }
