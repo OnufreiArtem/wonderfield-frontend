@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Word from './Word.js';
+import Loader from './Loader';
 
 function App() {
 
@@ -10,12 +11,18 @@ function App() {
   const [words, setWords] = useState([]);
   const [wordSize, setWordSize] = useState(minWordSize);
   const [letters, setLetters] = useState([formLetters(wordSize)]);
+  const [loading, setLoading] = useState(false);
 
   const searchFor = async (searchValue) => {
+    setLoading(true);
     console.log(searchValue);
     await fetch(`/find/${searchValue}`)
     .then(response => response.json())
-    .then(data => setWords(data.words));  
+    .then(data => {
+      setLoading(false);
+      setWords(data.words);
+    }); 
+
   }
 
   function getTextSearch(){
@@ -87,7 +94,7 @@ function App() {
       </section>
 
       <section className="result-section" id="results">
-
+        { loading && <Loader /> }
         <div className="words-container">
           {words.map((word, index) => (
             <Word word={word.word} id={`word${index}`} />
