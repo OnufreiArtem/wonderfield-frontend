@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/wonderfield-frontend/static/css/main.98923738.chunk.css",
+    "main.js": "/wonderfield-frontend/static/js/main.2066803d.chunk.js",
+    "main.js.map": "/wonderfield-frontend/static/js/main.2066803d.chunk.js.map",
+    "runtime-main.js": "/wonderfield-frontend/static/js/runtime-main.1a039d24.js",
+    "runtime-main.js.map": "/wonderfield-frontend/static/js/runtime-main.1a039d24.js.map",
+    "static/js/2.eb11405a.chunk.js": "/wonderfield-frontend/static/js/2.eb11405a.chunk.js",
+    "static/js/2.eb11405a.chunk.js.map": "/wonderfield-frontend/static/js/2.eb11405a.chunk.js.map",
+    "index.html": "/wonderfield-frontend/index.html",
+    "precache-manifest.d5c76c8ea70d6ad54538394fc4e6d8aa.js": "/wonderfield-frontend/precache-manifest.d5c76c8ea70d6ad54538394fc4e6d8aa.js",
+    "service-worker.js": "/wonderfield-frontend/service-worker.js",
+    "static/css/main.98923738.chunk.css.map": "/wonderfield-frontend/static/css/main.98923738.chunk.css.map",
+    "static/js/2.eb11405a.chunk.js.LICENSE.txt": "/wonderfield-frontend/static/js/2.eb11405a.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/wonderfield-frontend/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1a039d24.js",
+    "static/js/2.eb11405a.chunk.js",
+    "static/css/main.98923738.chunk.css",
+    "static/js/main.2066803d.chunk.js"
+  ]
+}
