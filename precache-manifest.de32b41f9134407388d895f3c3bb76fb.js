@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9464c72c3cce16b9c156e3d79fd2a2af",
+    "revision": "046f097954a50538d52561f12785b472",
     "url": "/wonderfield-frontend/index.html"
   },
   {
-    "revision": "478ca6a07e5457838abb",
+    "revision": "95ceb57ccb5e2e659e38",
     "url": "/wonderfield-frontend/static/css/main.98923738.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wonderfield-frontend/static/js/2.eb11405a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "478ca6a07e5457838abb",
-    "url": "/wonderfield-frontend/static/js/main.2066803d.chunk.js"
+    "revision": "95ceb57ccb5e2e659e38",
+    "url": "/wonderfield-frontend/static/js/main.1bd639f3.chunk.js"
   },
   {
     "revision": "93a81afc7563e9ad8816",

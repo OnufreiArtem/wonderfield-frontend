@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/wonderfield-frontend/precache-manifest.d5c76c8ea70d6ad54538394fc4e6d8aa.js"
+  "/wonderfield-frontend/precache-manifest.de32b41f9134407388d895f3c3bb76fb.js"
 );
 
 self.addEventListener('message', (event) => {
