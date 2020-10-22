@@ -16,7 +16,7 @@ function App() {
   const searchFor = async (searchValue) => {
     setLoading(true);
     console.log(searchValue);
-    await fetch(`/find/${searchValue}`)
+    await fetch(`https://guess-persones-server.oa.r.appspot.com/find/${searchValue}`)
     .then(response => response.json())
     .then(data => {
       setLoading(false);
